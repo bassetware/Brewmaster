@@ -1,0 +1,35 @@
+typedef struct keg{
+    long tara;
+    long full;
+    long max;
+    char name[128];
+};
+
+TFT_eSprite keg_sprite = TFT_eSprite(&tft);
+
+void update_keg_screen() {
+    //324,32
+    //446,287
+    keg_sprite.setColorDepth(8);
+    keg_sprite.createSprite(122, 250);
+    keg_sprite.setTextDatum(MC_DATUM);
+    keg_sprite.fillSprite(TFT_WHITE);
+    keg_sprite.setTextColor(TFT_WHITE, TFT_BLACK);
+    keg_sprite.fillRect(5,5,112,240,TFT_BLACK);
+    keg_sprite.pushSprite(324, 32, TFT_TRANSPARENT);
+    keg_sprite.deleteSprite();
+}
+
+
+void init_keg_screen() {
+    tft.fillScreen(TFT_BLACK);
+    update_keg_screen();
+}
+
+void init_scan_keg() {
+   tft.fillScreen(TFT_BLACK);
+   tft.setFreeFont(FSS12);
+   tft.setTextDatum(MC_DATUM);
+   tft.setTextColor(TFT_WHITE, TFT_BLACK);
+   tft.drawString("Scanne das Keg", SCREEN_W, SCREEN_H);
+}

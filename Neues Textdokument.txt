@@ -1,0 +1,9 @@
+T	WPA	Authentifizierungsart; kann WEP oder WPA sein, oder ohne Passwort frei bleiben.
+S	MyNetworkName	Netzwerk-SSID. Erforderlich.
+P	ThisIsMyPassword	Passwort, wird ignoriert, wenn T frei bleibt.
+H	true	Optional. True, wenn die Netzwerk-SSID versteckt ist.
+
+WIFI:T:WPA;S:MyNetworkName;P:ThisIsMyPassword;;
+
+WIFI:T:WPA;S:brewmaster;P:brewmaster;H:true;
+WIFI:T:WPA;brewmaster;P:brewmaster;;
